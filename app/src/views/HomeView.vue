@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <FirstChart />
-  </div>
+  <div></div>
 </template>
 
-<script setup>
-import FirstChart from '@/components/FirstChart.vue'
-</script>
+<script setup></script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

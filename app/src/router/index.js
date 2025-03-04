@@ -8,11 +8,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { title: 'Welcome To the New York Transportion Website' },
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue'),
+      path: '/taxi',
+      name: 'taxi',
+      component: () => import('../views/TaxiView.vue'),
+      meta: { title: 'Taxi Data in New York' },
     },
   ],
 })

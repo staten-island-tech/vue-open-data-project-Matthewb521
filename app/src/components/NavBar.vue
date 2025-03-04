@@ -14,9 +14,9 @@
             >Home</RouterLink
           >
           <RouterLink
-            to="/about"
+            to="/taxi"
             class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-            >About</RouterLink
+            >Taxi Data</RouterLink
           >
         </div>
       </div>
