@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import FirstChart from '@/components/TaxiChart.vue'
+import FirstChart from '@/components/taxi/TaxiChart.vue'
 </script>
 
 <style scoped></style>
