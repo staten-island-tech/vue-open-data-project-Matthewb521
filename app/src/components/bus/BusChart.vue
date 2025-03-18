@@ -14,10 +14,10 @@ Chart.register(PieController, ArcElement, Tooltip, Legend)
 async function createChart() {
   try {
     const response = await fetch('https://data.cityofnewyork.us/resource/ez4e-fazm.json')
-    const apiData = await response.json()
+    const busData = await response.json()
 
     const reasonCounts = {}
-    apiData.forEach((item) => {
+    busData.forEach((item) => {
       const reason = item.reason || 'Unknown'
       reasonCounts[reason] = (reasonCounts[reason] || 0) + 1
     })
