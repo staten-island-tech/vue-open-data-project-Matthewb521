@@ -22,6 +22,12 @@ const router = createRouter({
       component: () => import('../views/TaxiView.vue'),
       meta: { title: 'Taxi Data in New York' },
     },
+    {
+      path: '/car',
+      name: 'car',
+      component: () => import('../views/CarView.vue'),
+      meta: { title: 'Car Data in New York' },
+    },
   ],
 })
 

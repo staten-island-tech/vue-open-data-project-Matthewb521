@@ -1,0 +1,21 @@
+<template>
+  <div class="flex justify-center">
+    <div class="w-full sm:w-96 md:w-[28rem] lg:w-[32rem] bg-white shadow-lg rounded-lg p-6">
+      <h6 class="text-2xl font-semibold text-center mb-4">
+        {{ datas.name }}
+      </h6>
+      <p class="text-gray-700"><strong>License Type:</strong> {{ datas.license_type }}</p>
+      <p class="text-gray-700"><strong>Vehicle Year:</strong> {{ datas.vehicle_year }}</p>
+      <p class="text-gray-700">
+        <strong>License Plate:</strong> {{ datas.dmv_license_plate_number }}
+      </p>
+      <p class="text-gray-700"><strong>Base Name:</strong> {{ datas.base_name }}</p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+defineProps({ datas: Object })
+</script>
+
+<style scoped></style>
