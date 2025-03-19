@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div ref="card" class="flex justify-center draggable-card">
     <div class="w-full sm:w-96 md:w-[28rem] lg:w-[32rem] bg-white shadow-lg rounded-lg p-6">
       <h6 class="text-2xl font-semibold text-center mb-4">
         {{ datas.name }}
@@ -15,7 +15,24 @@
 </template>
 
 <script setup>
-defineProps({ datas: Object })
+import { ref, onMounted } from 'vue'
+import gsap from 'gsap'
+import Draggable from 'gsap/Draggable'
+
+gsap.registerPlugin(Draggable)
+
+const props = defineProps({ datas: Object })
+const card = ref(null)
+
+onMounted(() => {
+  Draggable.create(card.value, {
+    type: 'x,y',
+    edgeResistance: 0.65,
+    bounds: 'body',
+    inertia: true,
+    cursor: 'grab',
+  })
+})
 </script>
 
 <style scoped></style>
