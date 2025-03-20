@@ -25,12 +25,28 @@ const props = defineProps({ datas: Object })
 const card = ref(null)
 
 onMounted(() => {
+  const originalPosition = { x: 0, y: 0 }
+  let zIndexCounter = 1000
+
   Draggable.create(card.value, {
     type: 'x,y',
     edgeResistance: 0.65,
     bounds: 'body',
     inertia: true,
     cursor: 'grab',
+    onDragStart() {
+      originalPosition.x = this.x
+      originalPosition.y = this.y
+      this.target.style.zIndex = zIndexCounter++
+    },
+    onRelease() {
+      gsap.to(this.target, {
+        x: originalPosition.x,
+        y: originalPosition.y,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.5)',
+      })
+    },
   })
 })
 </script>
